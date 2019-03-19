@@ -7,6 +7,13 @@
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.8"
   },
+  "devDependencies": {
+    "faker": "4.1.0",
+    "glob": "7.1.2",
+    "lodash": "4.17.5",
+    "rimraf": "2.6.2",
+    "d3": "^3"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

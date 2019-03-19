@@ -1,28 +1,41 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Fragment, useState} from 'react';
 import './App.css';
+import OrgChart from "./components/OrgChart/org-chart";
+import fakeData from "./lib/utils/fake-data";
 
-class App extends Component {
-  render() {
+const treeChildren = fakeData();
+
+const filterNodesByName = (nameSearch) => {
+    console.log(treeChildren);
+    return treeChildren;
+};
+
+const App = () => {
+
+    const [tree, setTree]             = useState(treeChildren);
+    const [nameSearch, setNameSearch] = useState("");
+
+    const onNameSearchChange = e => {
+        setNameSearch(e.target.value);
+    };
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <Fragment>
+
+            <input type={"text"} value={nameSearch} onChange={onNameSearchChange}/>
+            <button onClick={() => setTree(filterNodesByName(nameSearch))} type={"button"}>test</button>
+
+            <OrgChart
+                tree={tree}
+                loadChildren={async () => {
+                    console.log('loading children..');
+                    return treeChildren.children;
+                }}
+                lineType={"angle"}
+            />
+
+        </Fragment>
     );
-  }
-}
+};
 
 export default App;

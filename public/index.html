@@ -22,7 +22,51 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>React App</title><style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      font-size: 12px;
+      font-family: "SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-smoothing: antialiased;
+      -webkit-font-smoothing: antialiased;
+    }
+    #root, #react-org-chart {
+      margin: 0;
+      cursor: move;
+      height: 100%;
+      width: 100%;
+      background-color:#f7f9fa;
+    }
+    .org-chart-person-name {
+      font-weight: 500;
+    }
+    .org-chart-person-link:hover g {
+      fill: #409CF9 !important;
+    }
+    .org-chart-node:hover .org-chart-person-reports {
+      fill: #409CF9 !important;
+    }
+    .org-chart-person-dept.engineering {
+      fill: #4CAF50 !important;
+    }
+    .org-chart-person-dept.communications {
+      fill: #3F51B5 !important;
+    }
+    .org-chart-person-dept.product {
+      fill: #D500F9 !important;
+    }
+    .org-chart-person-dept.hr {
+      fill: #2196F3 !important;
+    }
+    .org-chart-person-dept.marketing {
+      fill: #F44336 !important;
+    }
+    .org-chart-person-dept.design {
+      fill: #26C6DA !important;
+    }
+  </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
