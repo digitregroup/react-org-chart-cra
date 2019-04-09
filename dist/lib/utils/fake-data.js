@@ -88,7 +88,6 @@ var fakeData = function fakeData() {
 
   var data = genData({});
   console.log('total nodes', count);
-  console.log('oijoijoij');
   return data;
 };
 

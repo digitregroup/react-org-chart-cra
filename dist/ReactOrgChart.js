@@ -3,9 +3,10 @@ import _asyncToGenerator from "@babel/runtime/helpers/esm/asyncToGenerator";
 import React from 'react';
 import OrgChart from "./components/OrgChart/org-chart";
 import fakeData from "./lib/utils/fake-data";
-var treeChildren = fakeData();
 
-var ReactOrgChart = function ReactOrgChart() {
+var ReactOrgChart = function ReactOrgChart(_ref) {
+  var contacts = _ref.contacts;
+  var treeChildren = contacts || fakeData();
   return React.createElement(OrgChart, {
     tree: treeChildren,
     loadChildren:

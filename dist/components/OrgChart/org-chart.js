@@ -4,7 +4,7 @@ import _createClass from "@babel/runtime/helpers/esm/createClass";
 import _possibleConstructorReturn from "@babel/runtime/helpers/esm/possibleConstructorReturn";
 import _getPrototypeOf from "@babel/runtime/helpers/esm/getPrototypeOf";
 import _inherits from "@babel/runtime/helpers/esm/inherits";
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import { init } from "../../lib/chart";
 
 var OrgChart =
@@ -29,7 +29,6 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log('oijoijoijoijoijoijoijoij');
       var id = this.props.id;
       return React.createElement("div", {
         id: id

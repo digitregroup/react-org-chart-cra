@@ -46,8 +46,6 @@ export function init(options) {
   var elemWidth = elem.offsetWidth;
   var elemHeight = elem.offsetHeight; // Setup the d3 tree layout
 
-  console.log('elemHeight', elem)
-
   config.tree = d3.layout.tree().nodeSize([nodeWidth + nodeSpacing, nodeHeight + nodeSpacing]); // Calculate width of a node with expanded children
 
   var childrenWidth = parseInt(treeData.children.length * nodeWidth / 2); // Add svg root for d3
@@ -83,6 +81,7 @@ export function init(options) {
       global.removeEventListener('resize', resize);
       return;
     }
+
     svgroot.attr('width', elem.offsetWidth).attr('height', elem.offsetHeight);
   };
 
