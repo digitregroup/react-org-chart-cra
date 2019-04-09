@@ -1,24 +1,35 @@
 {
-  "name": "react-org-chart-cra",
+  "name": "@digitregroup/react-org-chart-cra",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitregroup/react-org-chart-cra"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "cross-env": "^5.2.0",
+    "d3": "^3",
     "faker": "4.1.0",
     "glob": "7.1.2",
     "lodash": "4.17.5",
-    "rimraf": "2.6.2",
-    "d3": "^3"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8",
+    "rimraf": "^2.6.3"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && cross-env NODE_ENV=production babel src/component --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prebuild": "rimraf dist"
   },
   "eslintConfig": {
     "extends": "react-app"
