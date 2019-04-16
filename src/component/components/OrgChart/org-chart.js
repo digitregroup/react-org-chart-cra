@@ -16,6 +16,14 @@ class OrgChart extends Component {
     });
   }
 
+  componentDidUpdate() {
+    init({
+      id:   `#${this.props.id}`,
+      data: this.props.tree,
+      ...this.props.options
+    });
+  }
+
   render() {
     let {id} = this.props;
 
