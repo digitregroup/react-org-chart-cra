@@ -1,8 +1,11 @@
 import React from 'react';
 import OrgChart from "./components/OrgChart/org-chart";
 import fakeData from "./lib/utils/fake-data";
+import * as PropTypes from "prop-types";
 
-const ReactOrgChart = ({contacts}) => {
+function ReactOrgChart(props) {
+  let {contacts} = props;
+
   const treeChildren = contacts || fakeData();
 
   return (
@@ -15,6 +18,8 @@ const ReactOrgChart = ({contacts}) => {
       lineType={"angle"}
     />
   );
-};
+}
+
+ReactOrgChart.propTypes = {contacts: PropTypes.any}
 
 export default ReactOrgChart;

@@ -1,10 +1,17 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useState} from "react";
 import ReactOrgChart from "./component/ReactOrgChart";
 
-const App = () => <Fragment>
+import fakeData from '../src/component/lib/utils/fake-data';
 
-  <ReactOrgChart/>
+function App() {
+  const [contacts, setContacts] = useState(fakeData());
+  return <Fragment>
 
-</Fragment>;
+    <button onClick={() => setContacts(fakeData())}>Reset</button>
+
+    <ReactOrgChart contacts={contacts}/>
+
+  </Fragment>;
+}
 
 export default App;
