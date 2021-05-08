@@ -10,7 +10,7 @@
   "devDependencies": {
     "faker": "4.1.0",
     "glob": "7.1.2",
-    "lodash": "4.17.13",
+    "lodash": "4.17.21",
     "rimraf": "2.6.2",
     "d3": "^3"
   },
